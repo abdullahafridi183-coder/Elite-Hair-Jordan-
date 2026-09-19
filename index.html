@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087f8c">
+<title>Elite Medical Clinic | Healthcare</title>
+<meta name="description" content="Elite Medical Clinic — professional healthcare services.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script src="config.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<div id="notice" class="notice" hidden><strong>Verification required:</strong> some clinic details must be confirmed before publication.</div>
+<header class="header"><nav class="nav wrap">
+<a class="brand" href="#home"><b>+</b><span id="brandName">Elite Medical Clinic</span></a>
+<button id="menuBtn" class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+<div id="menu" class="menu">
+<a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#team">Team</a>
+<a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#location">Location</a>
+<a class="nav-cta" href="#appointment">Book Appointment</a>
+</div></nav></header>
+
+<main>
+<section id="home" class="hero"><div class="wrap hero-grid">
+<div class="hero-copy reveal"><span class="eyebrow">Healthcare • Professional Care</span>
+<h1 id="heroTitle">Your health deserves attentive, professional care.</h1>
+<p id="heroText">Welcome to Elite Medical Clinic. Verified clinic information will be displayed here after source confirmation.</p>
+<div class="actions"><a class="btn primary" href="#appointment">Book an Appointment →</a><a class="btn" href="#contact">Contact Us</a></div>
+<div class="trust">✓ Verified information only &nbsp; ✓ Mobile-first experience</div></div>
+<div class="visual reveal"><div class="medical-card"><span class="big-plus">+</span><div class="ring"></div><div class="chip c1">Professional care</div><div class="chip c2">Appointment support</div></div></div>
+</div></section>
+
+<section id="verify" class="verify" hidden><div class="wrap verify-inner"><div><strong>Clinic location requires verification</strong><p>The supplied Google Maps link must be confirmed as belonging to this clinic.</p></div><a id="mapsVerify" class="btn dark" target="_blank" rel="noopener">Open Google Maps ↗</a></div></section>
+
+<section id="about" class="section"><div class="wrap two"><div class="reveal"><span class="eyebrow">About the clinic</span><h2>Care built around clarity, comfort and trust.</h2></div><div class="reveal"><p id="aboutText"></p><div id="pills" class="pills"></div></div></div></section>
+
+<section id="services" class="section soft"><div class="wrap"><div class="heading reveal"><span class="eyebrow">What we offer</span><h2>Services</h2><p>Only verified services are displayed.</p></div><div id="servicesGrid" class="cards"></div></div></section>
+
+<section id="why" class="section"><div class="wrap"><div class="heading reveal"><span class="eyebrow">The experience</span><h2>A modern digital front door for your clinic.</h2></div>
+<div class="cards features"><article><b>01</b><h3>Clear information</h3><p>Patients can quickly find verified services and contact options.</p></article>
+<article><b>02</b><h3>Easy appointment requests</h3><p>Simple appointment requests without falsely claiming instant confirmation.</p></article>
+<article><b>03</b><h3>Mobile-first</h3><p>Designed for phones, tablets and desktop screens.</p></article></div></div></section>
+
+<section id="team" class="section soft"><div class="wrap"><div class="heading reveal"><span class="eyebrow">Medical team</span><h2>Doctors & specialists</h2></div><div id="teamGrid" class="cards"></div></div></section>
+<section id="treatments" class="section"><div class="wrap"><div class="heading reveal"><span class="eyebrow">Specialties</span><h2>Treatments & specialties</h2></div><div id="treatmentsGrid" class="cards"></div></div></section>
+
+<section id="gallery" class="section soft"><div class="wrap"><div class="heading reveal"><span class="eyebrow">Clinic moments</span><h2>Gallery</h2><p>Add authorized clinic media in <code>script.js</code>.</p></div><div id="galleryGrid" class="gallery"></div></div></section>
+
+<section class="section"><div class="wrap social reveal"><div><span class="eyebrow">Social media</span><h2>Follow Elite Medical Clinic</h2><p>See public updates on Instagram.</p></div><a id="instagram" class="btn primary" target="_blank" rel="noopener">Open Instagram ↗</a></div></section>
+
+<section id="reviews" class="section soft"><div class="wrap"><div class="heading reveal"><span class="eyebrow">Patient feedback</span><h2>Reviews</h2></div><div id="reviewsGrid" class="cards"></div><div class="center"><a id="reviewsLink" class="btn" target="_blank" rel="noopener">View all reviews on Google</a></div></div></section>
+
+<section class="section"><div class="wrap two"><div class="reveal"><span class="eyebrow">Opening hours</span><h2>When you can reach us</h2></div><div id="hours" class="hours reveal"></div></div></section>
+
+<section id="location" class="section soft"><div class="wrap"><div class="heading reveal"><span class="eyebrow">Location</span><h2>Find the clinic</h2></div>
+<div class="location"><div class="mapbox reveal"><span class="mapicon">+</span><h3>Location pending verification</h3><p>The supplied Maps link requires identity confirmation.</p><a id="directions" class="btn primary" target="_blank" rel="noopener">Open Google Maps ↗</a></div>
+<div class="contactbox reveal"><h3>Contact information</h3><div id="contacts"></div></div></div></div></section>
+
+<section id="appointment" class="section appointment"><div class="wrap form-layout"><div class="intro reveal"><span class="eyebrow">Appointment</span><h2>Request an appointment.</h2><p>Submitting this form sends a request to the clinic; it does not confirm an appointment.</p></div>
+<form id="appointmentForm" class="form reveal" novalidate><input type="hidden" name="formType" value="appointment">
+<div class="row"><label>Full Name<input name="name" required></label><label>Email<input name="email" type="email" required></label></div>
+<div class="row"><label>Phone<input name="phone" type="tel" required></label><label>Service<select name="service" id="serviceSelect"><option value="">Select service</option></select></label></div>
+<div class="row"><label>Preferred Date<input name="date" type="date"></label><label>Preferred Time<input name="time" type="time"></label></div>
+<label>Message<textarea name="message" minlength="10" required></textarea></label><input class="honeypot" name="website" tabindex="-1" autocomplete="off">
+<button class="btn primary submit" type="submit">Send Appointment Request</button><p id="appointmentStatus" class="status" role="status"></p></form></div></section>
+
+<section id="contact" class="section soft"><div class="wrap form-layout"><div class="intro reveal"><span class="eyebrow">Contact</span><h2>Have a question?</h2><p>Send an inquiry to the clinic.</p></div>
+<form id="contactForm" class="form reveal" novalidate><input type="hidden" name="formType" value="contact">
+<div class="row"><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label></div>
+<div class="row"><label>Phone<input name="phone" required></label><label>Service<input name="service"></label></div>
+<label>Message<textarea name="message" minlength="10" required></textarea></label><input class="honeypot" name="website" tabindex="-1" autocomplete="off">
+<button class="btn primary submit" type="submit">Send Inquiry</button><p id="contactStatus" class="status" role="status"></p></form></div></section>
+
+<section id="faq" class="section"><div class="wrap narrow"><div class="heading reveal"><span class="eyebrow">FAQ</span><h2>Frequently asked questions</h2></div>
+<details class="reveal"><summary>Does submitting an appointment request confirm my appointment?</summary><p>No. The clinic must confirm availability separately.</p></details>
+<details class="reveal"><summary>Why is the location marked for verification?</summary><p>The supplied Google Maps short link must be confirmed as belonging to this exact clinic.</p></details>
+</div></section>
+</main>
+
+<a id="whatsapp" class="whatsapp" hidden target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
+<footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="#home"><b>+</b><span id="footerName">Elite Medical Clinic</span></a><p>Pure HTML, CSS and JavaScript frontend with Google Sheets backend.</p></div><div><h3>Navigation</h3><a href="#services">Services</a><a href="#appointment">Appointments</a><a href="#location">Location</a></div><div><h3>Social</h3><a id="footerInstagram" target="_blank" rel="noopener">Instagram</a><a id="footerMaps" target="_blank" rel="noopener">Google Maps</a></div></div>
+<div class="wrap footer-bottom">© <span id="year"></span> Elite Medical Clinic</div></footer>
+
+<div id="lightbox" class="lightbox" hidden><button id="closeLightbox" aria-label="Close">×</button><button id="prevImage" aria-label="Previous">‹</button><img id="lightboxImage" alt=""><button id="nextImage" aria-label="Next">›</button></div>
+</body></html>
